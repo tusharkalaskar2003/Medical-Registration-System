@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content1 %}
+  <h1>Enter Your Preference:</h1>
+  <form method="POST" action="{% url 'preference' %}">
+		{% csrf_token %}
+		<h2>Select the type of analysis you want to perform:</h2>
+
+		<input type="radio" id="store_analysis" name="prefrence" value="store_analysis">
+		<label for="store_analysis">Store analysis</label><br>
+
+		<input type="radio" id="product_analysis" name="prefrence" value="product_analysis">
+		<label for="product_analysis">Product analysis</label><br>
+
+		<!-- <input type="radio" id="time_based_analysis" name="prefrence" value="time_based_analysis">
+		<label for="time_based_analysis">Time-based analysis</label><br>
+
+		<input type="radio" id="distribution_visualization" name="prefrence" value="distribution_visualization">
+		<label for="distribution_visualization">Distribution visualization</label><br>
+
+		<input type="radio" id="heat_maps" name="prefrence" value="heat_maps">
+		<label for="heat_maps">Heat maps</label><br> -->
+
+		<br>
+		<input type="submit" value="Submit">
+	  </form>
+
+{% endblock %}
